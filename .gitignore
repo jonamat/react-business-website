@@ -1,0 +1,7 @@
+node_modules
+build_stats/log.json
+project_res
+package-lock.json
+.env
+.vscode
+.firebase

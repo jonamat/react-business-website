@@ -1,0 +1,6 @@
+* text=auto
+build/* linguist-vendored
+build_stats/* linguist-vendored
+*.js linguist-detectable=false
+*.html linguist-detectable=false
+*.css linguist-detectable=false
