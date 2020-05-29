@@ -1,0 +1,32 @@
+// Fonts
+$primary-font: 'Montserrat', 'Helvetica', sans-serif;
+
+// Sizes
+$xs-padding-frame: 20px;
+$sm-padding-frame: 60px;
+$xs-margin-frame: 20px;
+$sm-margin-frame: 60px;
+
+// Breakpoits
+$xs: 0px;
+$sm: 600px;
+$md: 960px;
+$lg: 1280px;
+$xl: 1920px;
+
+$breakpoints: (
+    'sm': $sm,
+    'md': $md,
+    'lg': $lg,
+    'xl': $xl,
+) !default;
+
+// Palette
+$primary-color: #218bb8;
+$secondary-color: #c94c3b;
+
+$primary-text-color: #000000de;
+$secondary-text-color: #676767;
+$contrast-text-color: #fff;
+
+// Resources
