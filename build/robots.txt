@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /pagina-non-trovata
+Disallow: /public/privacy-policy.html
+Sitemap: https://assistenza-pc-mantova.it/sitemap.xml
