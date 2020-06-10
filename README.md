@@ -8,10 +8,10 @@ SEO optimized React website for a local IT assistance service located in Italy. 
 # Features & optimizations
 
 - Essential resources preloading
-- Postpone not essential and required code with React.lazy
 - Off-screen components deferred to reduce the First Contentful Paint
 - Requires WebP images for non-Safari user agents and jpg as fallback
 - Resolution based images fetching
+- Postpone non-essential code with React.lazy
 - Optimized service worker for offline usage and resources prefetching
 - Promise polyfill for old browsers
 
