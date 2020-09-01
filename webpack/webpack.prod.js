@@ -36,7 +36,6 @@ const rules = [
     {
         test: /\.scss$/,
         use: [
-            // MiniCssExtractPlugin.loader,
             'style-loader',
             'css-loader',
             {
@@ -47,20 +46,6 @@ const rules = [
             },
         ],
     },
-    // {
-    //     test: /\.css$/,
-    //     use: [
-    //         // 'style-loader',
-    //         // {
-    //         //     loader: MiniCssExtractPlugin.loader,
-    //         //     options: {
-    //         //         publicPath
-    //         //     },
-    //         //   },
-    //         MiniCssExtractPlugin.loader,
-    //         'css-loader',
-    //     ],
-    // },
 ];
 
 module.exports = merge(common, {
@@ -70,9 +55,6 @@ module.exports = merge(common, {
         filename: 'bundle.[contentHash].js',
         chunkFilename: 'dynamic/[name].[contentHash].js',
     },
-    // optimization: {
-    //     minimize: false,
-    // },
     module: { rules },
     plugins: [
         // Clean build folder
@@ -93,11 +75,6 @@ module.exports = merge(common, {
             minify: true,
             inject: true,
         }),
-
-        // Inject stylesheets
-        // new MiniCssExtractPlugin({
-        //     filename: 'style.[contentHash].css',
-        // }),
 
         // Copy static files
         new CopyWebpackPlugin({
