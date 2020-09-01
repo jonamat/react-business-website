@@ -60,27 +60,6 @@ const Prices: FC<RouteComponentProps> = ({ history }) => {
                 </Grid>
             </section>
 
-            {/* Img + description */}
-            <section>
-                <Grid container justify="space-between" spacing={2}>
-                    <Grid className="text" item container xs={12} md={7} direction="column" justify="center">
-                        <Typography variant="h6" align="left" gutterBottom color="secondary">
-                            Fino al <b>31 agosto 2020</b>
-                        </Typography>
-                        <Typography variant="h4" component="p" align="left" gutterBottom color="primary">
-                            Offerta lancio spaziale!
-                        </Typography>
-                        <Typography align="left">
-                            Fino al <b>31 agosto 2020</b> il ritiro e la consegna dei dispositivi guasti è gratuita per
-                            tutti i residenti in <b>zona A e B</b>. Non farti sfuggire l&#39;occasione!
-                        </Typography>
-                    </Grid>
-                    <Grid item xs={12} md={5} className="outstanding-img-container" container alignItems="center">
-                        <img className="right" src={Prices2} alt="Offerta" />
-                    </Grid>
-                </Grid>
-            </section>
-
             {/* Map */}
             <section>
                 <Typography align="center" variant="h6" component="p">
@@ -135,9 +114,7 @@ const Prices: FC<RouteComponentProps> = ({ history }) => {
                             <Typography gutterBottom variant="h6">
                                 Intervento sul posto
                             </Typography>
-                            <PriceRow price={calcPrice('sulPosto', area)}>
-                                Tariffa oraria, scaglionamento 15 minuti
-                            </PriceRow>
+                            <PriceRow price={calcPrice('sulPosto', area)}>Tariffa oraria</PriceRow>
                         </Grid>
                     </Grid>
 
@@ -149,9 +126,7 @@ const Prices: FC<RouteComponentProps> = ({ history }) => {
                             <Typography gutterBottom variant="h6">
                                 Riparazione in sede
                             </Typography>
-                            <PriceRow price={calcPrice('inSede', area)}>
-                                Tariffa oraria, scaglionamento 30 minuti
-                            </PriceRow>
+                            <PriceRow price={calcPrice('inSede', area)}>Tariffa oraria</PriceRow>
                         </Grid>
                     </Grid>
 
@@ -163,9 +138,7 @@ const Prices: FC<RouteComponentProps> = ({ history }) => {
                             <Typography gutterBottom variant="h6">
                                 Assistenza remota
                             </Typography>
-                            <PriceRow price={calcPrice('remota', area)}>
-                                Tariffa oraria, scaglionamento 15 minuti
-                            </PriceRow>
+                            <PriceRow price={calcPrice('remota', area)}>Tariffa oraria</PriceRow>
                         </Grid>
                     </Grid>
 
@@ -177,9 +150,7 @@ const Prices: FC<RouteComponentProps> = ({ history }) => {
                             <Typography gutterBottom variant="h6">
                                 Consulenza telefonica
                             </Typography>
-                            <PriceRow price={calcPrice('telefonica', area)}>
-                                Tariffa oraria, scaglionamento 15 minuti
-                            </PriceRow>
+                            <PriceRow price={calcPrice('telefonica', area)}>Tariffa oraria</PriceRow>
                         </Grid>
                     </Grid>
                 </Grid>

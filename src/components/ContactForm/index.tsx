@@ -2,7 +2,7 @@ import React, { FC, useState, FormEvent, createRef, Suspense } from 'react';
 import sendMail from './sendMail';
 import { Button, Grid, CircularProgress, Typography } from '@material-ui/core';
 import useStyles from './style';
-import Defer from '../Defer';
+import { Defer } from 'react-wait-content';
 import ErrorBoundary from '../ErrorBoundary';
 import { devMode } from '../../config';
 import reportError from '../../functions/reportError';

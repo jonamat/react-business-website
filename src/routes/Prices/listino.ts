@@ -4,7 +4,7 @@ type Fields = keyof typeof prezziAreaA;
 const common = {
     sulPosto: 35,
     inSede: 25,
-    remota: 40,
+    remota: 30,
     telefonica: 30,
 };
 

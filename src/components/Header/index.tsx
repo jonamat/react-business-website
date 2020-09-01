@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react';
 import { Collapse, Grid, Typography, Fade } from '@material-ui/core';
-import useStyles from './style';
 import Typewriter from 'typewriter-effect';
-import Defer from '../Defer';
+import { Defer } from 'react-wait-content';
+import useStyles from './style';
 
 interface Props {
     collapse: boolean;
