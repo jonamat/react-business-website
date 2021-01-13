@@ -1,12 +1,11 @@
 const path = require('path');
 const common = require('./webpack.common');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const workboxPlugin = require('workbox-webpack-plugin');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const Visualizer = require('webpack-visualizer-plugin');
+const Visualizer = require('webpack-visualizer-plugin2');
 const StatsWriterPlugin = require('webpack-stats-plugin').StatsWriterPlugin;
 const webpack = require('webpack');
 const dotenv = require('dotenv');
@@ -51,9 +50,9 @@ const rules = [
 module.exports = merge(common, {
     mode: 'production',
     output: {
-        path: path.resolve(__dirname, '../', 'build'),
-        filename: 'bundle.[contentHash].js',
-        chunkFilename: 'dynamic/[name].[contentHash].js',
+        path: path.resolve(__dirname, '..', 'build'),
+        filename: 'bundle.[contenthash].js',
+        chunkFilename: path.join('dynamic', '[name].[contenthash].js'),
     },
     module: { rules },
     plugins: [
@@ -70,7 +69,7 @@ module.exports = merge(common, {
 
         // Generate index
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../', 'src', 'templates', 'index.ejs'),
+            template: path.resolve(__dirname, '..', 'src', 'templates', 'index.ejs'),
             buildTarget: 'web',
             minify: true,
             inject: true,
@@ -80,7 +79,7 @@ module.exports = merge(common, {
         new CopyWebpackPlugin({
             patterns: [
                 {
-                    from: path.resolve(__dirname, '../', 'public'),
+                    from: path.resolve(__dirname, '..', 'public'),
                     to: '.',
                 },
             ],
@@ -88,12 +87,12 @@ module.exports = merge(common, {
 
         // Bundle statistics
         new StatsWriterPlugin({
-            filename: '../build_stats/log.json',
+            filename: path.join('..', 'build_stats', 'log.json'),
             fields: null,
             stats: { chunkModules: true },
         }),
         new Visualizer({
-            filename: '../build_stats/webpack.statistics.html',
+            filename: path.join('..', 'build_stats', 'webpack.statistics.html'),
         }),
 
         // Generate service worker and define runtime caching
@@ -105,25 +104,6 @@ module.exports = merge(common, {
             cleanupOutdatedCaches: true,
             navigateFallback: 'index.html',
             maximumFileSizeToCacheInBytes: 50 * 1024 * 1024,
-
-            // navigationPreload: true,
-            // runtimeCaching: [
-            //     {
-            // User avatars from firebase storage
-            // urlPattern: /.*firebasestorage.*avatars/,
-            // handler: 'CacheFirst',
-            // options: {
-            //     cacheName: 'avatars',
-            //     expiration: {
-            //         maxEntries: 100,
-            //         maxAgeSeconds: 60 * 20,
-            //     },
-            //     cacheableResponse: {
-            //         statuses: [0, 200], // ** Required
-            //     },
-            // },
-            //     },
-            // ],
         }),
     ],
 });

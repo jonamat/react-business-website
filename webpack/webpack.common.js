@@ -16,7 +16,7 @@ const rules = [
         use: {
             loader: 'file-loader',
             options: {
-                name: '[name].[hash].[ext]',
+                name: '[name].[contenthash].[ext]',
                 outputPath: assetsFolderName,
             },
         },
@@ -48,7 +48,7 @@ const rules = [
 ];
 
 module.exports = {
-    entry: path.resolve(__dirname, '../', 'src', 'index.tsx'),
+    entry: path.resolve(__dirname, '..', 'src', 'index.tsx'),
     resolve: { extensions: ['.ts', '.tsx', '.js'] },
     module: { rules },
 };
