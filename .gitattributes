@@ -7,5 +7,9 @@ test/**/* linguist-detectable=true
 coverage/**/* linguist-generated=true
 build/**/* linguist-generated=true
 
+# Ignore asset files
+*.svg linguist-detectable=false
+*.scss linguist-detectable=false
+
 # Normalize line ending
 * text=auto
