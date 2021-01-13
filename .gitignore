@@ -1,7 +1,8 @@
 node_modules
-build_stats/log.json
-project_res
+build_stats
+build
 package-lock.json
+yarn.lock
 .env
 .vscode
 .firebase
