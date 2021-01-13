@@ -16,6 +16,7 @@ declare global {
             SKYPE_ID: string;
             FACEBOOK_PAGE_NAME: string;
             INSTAGRAM_PAGE_NAME: string;
+            MISTERIMPRESE_PATH: string;
         }
     }
 }
