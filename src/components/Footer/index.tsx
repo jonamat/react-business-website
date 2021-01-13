@@ -31,16 +31,22 @@ const Footer: FC = () => {
                         Privacy policy
                     </a>
                 </b>
-                . Seguici su&nbsp;
+                .&nbsp;Seguici su&nbsp;
                 <b>
                     <a className={classes.link} href={'https://www.facebook.com/' + process.env.FACEBOOK_PAGE_NAME}>
                         Facebook
                     </a>
                 </b>
-                &nbsp;e&nbsp;
+                ,&nbsp;
                 <b>
                     <a className={classes.link} href={'https://www.instagram.com/' + process.env.INSTAGRAM_PAGE_NAME}>
                         Instagram
+                    </a>
+                </b>
+                &nbsp;e&nbsp;
+                <b>
+                    <a className={classes.link} href={'https://www.misterimprese.it/' + process.env.MISTERIMPRESE_PATH}>
+                        MisterImprese
                     </a>
                 </b>
             </Typography>
