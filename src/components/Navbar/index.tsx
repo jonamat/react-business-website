@@ -17,7 +17,7 @@ import useStyles from './style';
 import { Pages } from '../../types';
 import ListRoundedIcon from '@material-ui/icons/ListRounded';
 import Drawer from '../Drawer';
-import evalutateCurrentLocation from '../../functions/evalutateCurrentLocation';
+import evaluateCurrentLocation from '../../utils/evaluateCurrentLocation';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 
@@ -28,7 +28,7 @@ interface Props {
 const Navbar: FC<Props> = ({ handleTabChange }) => {
     const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
     const isOnTop = !useScrollTrigger({ target: window, disableHysteresis: true, threshold: SCROLLTOP_THRESHOLD });
-    const page = evalutateCurrentLocation(location.pathname);
+    const page = evaluateCurrentLocation(location.pathname);
     const isHomepage = page === Pages.Home;
     const classes = useStyles();
     const tabClasses: Partial<Record<TabClassKey, string>> = {

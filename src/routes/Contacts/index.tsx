@@ -3,7 +3,7 @@ import ReactGA from 'react-ga';
 import { Grid, Typography } from '@material-ui/core';
 
 import ContactForm from '../../components/ContactForm';
-import setPageMeta from '../../functions/setPageMeta';
+import setPageMeta from '../../utils/setPageMeta';
 import { devMode } from '../../config';
 
 // Assets
@@ -11,7 +11,7 @@ import Phone from '../../assets/img/contact-svg-01.svg';
 import Email from '../../assets/img/contact-svg-02.svg';
 import Whatsapp from '../../assets/img/contact-svg-03.svg';
 import Telegram from '../../assets/img/contact-svg-04.svg';
-import Messanger from '../../assets/img/contact-svg-05.svg';
+import Messenger from '../../assets/img/contact-svg-05.svg';
 import Skype from '../../assets/img/contact-svg-06.svg';
 
 type Contact = 'phone' | 'email' | 'whatsapp' | 'telegram' | 'messenger' | 'skype';
@@ -80,9 +80,10 @@ const Contacts: FC = () => {
                         Orario di lavoro
                     </Typography>
                     <Typography align="center">
-                        Dal <b>lunedì</b> al <b>venerdì</b> dalle <b>9:00</b> alle <b>17:30</b>
+                        Dal <b>lunedì</b> al <b>venerdì</b> dalle <b>9:00</b> alle <b>12:30</b> e dalle <b>15:00</b>{' '}
+                        alle <b>19:00</b>
                         <br />
-                        <b>Sabato</b> dalle <b>9:00</b> alle <b>13:30</b>
+                        <b>Sabato</b> dalle <b>9:00</b> alle <b>12:30</b>
                         <br />
                         <br />
                         Puoi comunque lasciarci un messaggio a qualsiasi orario.
@@ -188,7 +189,7 @@ const Contacts: FC = () => {
                         onClick={() => handleContactClick('messenger')}
                     >
                         <Grid item container xs={12} md={4} alignItems="center">
-                            <Messanger className="tab-icon small" />
+                            <Messenger className="tab-icon small" />
                         </Grid>
                         <Grid item xs={12} md={8}>
                             <Typography color="inherit" className="center-xs" component="h6">

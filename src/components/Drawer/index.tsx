@@ -8,7 +8,7 @@ import { Pages } from '../../types';
 import useStyles from './style';
 import NavigateNextRoundedIcon from '@material-ui/icons/NavigateNextRounded';
 import NavigateBeforeRoundedIcon from '@material-ui/icons/NavigateBeforeRounded';
-import evalutateCurrentLocation from '../../functions/evalutateCurrentLocation';
+import evaluateCurrentLocation from '../../utils/evaluateCurrentLocation';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 
@@ -20,7 +20,7 @@ interface DrawerProps {
 
 const Drawer: FC<DrawerProps> = ({ drawerOpen, closeDrawer, handleTabChange }) => {
     const classes = useStyles();
-    const page = evalutateCurrentLocation(location.pathname);
+    const page = evaluateCurrentLocation(location.pathname);
 
     return (
         <MuiDrawer classes={{ paper: classes.drawer }} anchor="right" open={drawerOpen} onClose={closeDrawer}>

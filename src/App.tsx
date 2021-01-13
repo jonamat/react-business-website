@@ -1,8 +1,9 @@
 import React, { FC, Suspense } from 'react';
 import { Switch, Route, useHistory, Redirect } from 'react-router';
 import CookieConsent from 'react-cookie-consent';
+
 import { Pages } from './types';
-import evalutateCurrentLocation from './functions/evalutateCurrentLocation';
+import evaluateCurrentLocation from './utils/evaluateCurrentLocation';
 
 // Components
 import Navbar from './components/Navbar';
@@ -14,16 +15,27 @@ import ErrorBoundary from './components/ErrorBoundary';
 
 // Routes
 import LoadingPage from './routes/LoadingPage';
-// ** Resource prefetching is delegated to the service worker
+
+// Resource prefetching is delegated to the service worker
 const Home = React.lazy(() => import(/* webpackChunkName: "home" */ './routes/Home'));
 const Services = React.lazy(() => import(/* webpackChunkName: "services" */ './routes/Services'));
 const Prices = React.lazy(() => import(/* webpackChunkName: "prices" */ './routes/Prices'));
 const Contacts = React.lazy(() => import(/* webpackChunkName: "contacts" */ './routes/Contacts'));
 const NotFound = React.lazy(() => import(/* webpackChunkName: "not-found" */ './routes/NotFound'));
 
+const errorFallback = (
+    <div className="error-box">
+        <h3>Caricamento non riuscito</h3>
+        <p>
+            Sembra ci sia stato un errore nel caricamento della pagina. Controlla la tua connessione a internet e
+            ricarica la pagina.
+        </p>
+    </div>
+);
+
 const App: FC = () => {
     const history = useHistory();
-    const [page, setTabIndex] = React.useState<Pages>(evalutateCurrentLocation(location.pathname));
+    const [page, setTabIndex] = React.useState<Pages>(evaluateCurrentLocation(location.pathname));
     const isHomepage = page === Pages.Home;
 
     const handleTabChange = (_e: React.ChangeEvent<unknown>, value: Pages) => {
@@ -44,16 +56,6 @@ const App: FC = () => {
 
         setTabIndex(value);
     };
-
-    const errorFallback = (
-        <div className="error-box">
-            <h3>Caricamento non riuscito</h3>
-            <p>
-                Sembra ci sia stato un errore nel caricamento della pagina. Controlla la tua connesione a internet e
-                ricarica la pagina.
-            </p>
-        </div>
-    );
 
     return (
         <>
@@ -81,8 +83,6 @@ const App: FC = () => {
             <CookieConsent
                 location="bottom"
                 buttonText="Ok"
-                acceptOnScroll={true}
-                acceptOnScrollPercentage={10}
                 containerClasses="cookie-banner"
                 buttonClasses="button"
                 contentClasses="content"

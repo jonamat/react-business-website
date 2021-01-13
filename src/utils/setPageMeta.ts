@@ -5,7 +5,9 @@ interface Params {
     description: string;
 }
 
-/** Define title and description for the current page */
+/**
+ * Define title and description for the current page
+ */
 const setPageMeta = ({ title, description }: Params): void => {
     if (devMode) {
         if (title.length > 60) {

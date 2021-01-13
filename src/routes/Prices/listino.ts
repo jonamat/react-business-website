@@ -2,7 +2,7 @@ import { Areas } from './../../types';
 type Fields = keyof typeof prezziAreaA;
 
 const common = {
-    sulPosto: 35,
+    sulPosto: 30,
     inSede: 25,
     remota: 30,
     telefonica: 30,
@@ -13,13 +13,13 @@ const prezziAreaA = {
     chiamata: 20,
     chiamataEmergenza: 85,
     chimataNotturna: 185,
-    andataRitorno: 30,
+    andataRitorno: 25,
 
-    basicIntero: 80,
-    basicRidotto: 70,
+    basicIntero: 150,
+    basicRidotto: 130,
 
-    mediumIntero: 220,
-    mediumRidotto: 175,
+    mediumIntero: 300,
+    mediumRidotto: 240,
 
     enterpriseIntero: 500,
     enterpriseRidotto: 375,
@@ -30,16 +30,16 @@ const prezziAreaB = {
     chiamata: 25,
     chiamataEmergenza: 95,
     chimataNotturna: 200,
-    andataRitorno: 35,
+    andataRitorno: 30,
 
-    basicIntero: 95,
-    basicRidotto: 80,
+    basicIntero: 330,
+    basicRidotto: 280,
 
-    mediumIntero: 255,
-    mediumRidotto: 205,
+    mediumIntero: 330,
+    mediumRidotto: 265,
 
-    enterpriseIntero: 575,
-    enterpriseRidotto: 430,
+    enterpriseIntero: 550,
+    enterpriseRidotto: 410,
 };
 
 const prezziAreaC = {
@@ -49,14 +49,14 @@ const prezziAreaC = {
     chimataNotturna: 215,
     andataRitorno: 45,
 
-    basicIntero: 110,
-    basicRidotto: 90,
+    basicIntero: 180,
+    basicRidotto: 150,
 
-    mediumIntero: 290,
-    mediumRidotto: 230,
+    mediumIntero: 360,
+    mediumRidotto: 290,
 
-    enterpriseIntero: 650,
-    enterpriseRidotto: 490,
+    enterpriseIntero: 600,
+    enterpriseRidotto: 450,
 };
 
 export const calcPrice = (type: Fields, area: Areas): number => {

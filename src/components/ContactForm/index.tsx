@@ -5,7 +5,7 @@ import useStyles from './style';
 import { Defer } from 'react-wait-content';
 import ErrorBoundary from '../ErrorBoundary';
 import { devMode } from '../../config';
-import reportError from '../../functions/reportError';
+import reportError from '../../utils/reportError';
 
 const TextField = React.lazy(() => import(/* webpackChunkName: "text-field" */ '@material-ui/core/TextField'));
 const ReCAPTCHA = React.lazy(() => import(/* webpackChunkName: "recaptcha" */ 'react-google-recaptcha'));

@@ -1,5 +1,5 @@
 import { Component, ErrorInfo } from 'react';
-import reportError from '../../functions/reportError';
+import reportError from '../../utils/reportError';
 
 interface Props {
     fallback?: JSX.Element;

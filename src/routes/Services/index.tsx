@@ -5,7 +5,7 @@ import { ParallaxBanner } from 'react-scroll-parallax';
 import { Defer } from 'react-wait-content';
 import { isSafari, isIE } from 'react-device-detect';
 
-import setPageMeta from '../../functions/setPageMeta';
+import setPageMeta from '../../utils/setPageMeta';
 import CheckedRow from './CheckedRow';
 
 // Assets

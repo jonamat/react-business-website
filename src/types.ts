@@ -1,7 +1,9 @@
-/** Map defined areas */
+/* ---------------------------- Map defined areas --------------------------- */
+
 export type Areas = 'A' | 'B' | 'C';
 
-/** Website pages */
+/* ------------------------------ Website pages ----------------------------- */
+
 export enum Pages {
     Home,
     Services,

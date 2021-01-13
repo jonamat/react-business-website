@@ -1,8 +1,11 @@
 import { Pages } from '../types';
 
-/** Infer Page from location path */
-const evalutateCurrentLocation = (pathname: string): Pages => {
-    switch (pathname) {
+/**
+ * Infer Page from location path
+ * @param path Path name
+ */
+const evaluateCurrentLocation = (path: string): Pages => {
+    switch (path) {
         case '/':
             return Pages.Home;
         case '/servizi':
@@ -16,4 +19,4 @@ const evalutateCurrentLocation = (pathname: string): Pages => {
     }
 };
 
-export default evalutateCurrentLocation;
+export default evaluateCurrentLocation;

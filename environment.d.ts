@@ -3,7 +3,7 @@ declare global {
         interface ProcessEnv {
             NODE_ENV: 'development' | 'production';
 
-            ANALITYCS_ID: string;
+            ANALYTICS_ID: string;
             RECAPTCHA_KEY: string;
 
             // Contacts

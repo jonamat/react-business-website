@@ -6,7 +6,7 @@ import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { isSafari, isIE } from 'react-device-detect';
 
 import ContactForm from '../../components/ContactForm';
-import setPageMeta from '../../functions/setPageMeta';
+import setPageMeta from '../../utils/setPageMeta';
 
 // Assets
 import Icon1 from '../../assets/img/icon-01.png';

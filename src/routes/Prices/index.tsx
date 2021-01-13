@@ -5,7 +5,7 @@ import ReactGA from 'react-ga';
 
 import Map, { OnChangeCallback } from '../../components/Map';
 import { Areas } from '../../types';
-import setPageMeta from '../../functions/setPageMeta';
+import setPageMeta from '../../utils/setPageMeta';
 import { devMode } from '../../config';
 
 // Sub-components
@@ -102,7 +102,7 @@ const Prices: FC<RouteComponentProps> = ({ history }) => {
                             <Typography gutterBottom variant="h6">
                                 Ritiro e consegna dispositivo guasto
                             </Typography>
-                            <PriceRow price={calcPrice('andataRitorno', area)}>Andata e ritorno x2</PriceRow>
+                            <PriceRow price={calcPrice('andataRitorno', area)}>Andata e ritorno</PriceRow>
                         </Grid>
                     </Grid>
 
@@ -203,7 +203,7 @@ const Prices: FC<RouteComponentProps> = ({ history }) => {
                                 Pacchetto basic
                             </Typography>
                             <PriceRow>3 interventi a domicilio</PriceRow>
-                            <PriceRow>1/2 ora assistenza telefonica o remota</PriceRow>
+                            <PriceRow>1 ora assistenza telefonica o remota</PriceRow>
                             <PriceRow price="15%" endSymbol={false}>
                                 Risparmio del
                             </PriceRow>
@@ -232,7 +232,7 @@ const Prices: FC<RouteComponentProps> = ({ history }) => {
                                 Pacchetto medium
                             </Typography>
                             <PriceRow>7 interventi a domicilio</PriceRow>
-                            <PriceRow>2 ore di assistenza telefonica o remota</PriceRow>
+                            <PriceRow>6 ore di assistenza telefonica o remota</PriceRow>
                             <PriceRow price="20%" endSymbol={false}>
                                 Risparmio del
                             </PriceRow>
@@ -260,8 +260,8 @@ const Prices: FC<RouteComponentProps> = ({ history }) => {
                             <Typography gutterBottom variant="h6" component="p">
                                 Pacchetto enterprise
                             </Typography>
-                            <PriceRow>15 interventi a domicilio</PriceRow>
-                            <PriceRow>5 ore di assistenza telefonica o remota</PriceRow>
+                            <PriceRow>10 interventi a domicilio</PriceRow>
+                            <PriceRow>10 ore di assistenza telefonica o remota</PriceRow>
                             <PriceRow price="25%" endSymbol={false}>
                                 Risparmio del
                             </PriceRow>
